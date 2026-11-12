@@ -1,6 +1,6 @@
 @use "variables" as *;
 
-// Stili generali
+// Generale
 body {
   background: $paper;
   color: $ink;
@@ -101,7 +101,7 @@ a {
   font-size: 14px;
 }
 
-// Griglia progetti (CSS Grid)
+// Progetti
 .bento {
   display: grid;
   gap: 20px;
@@ -136,7 +136,7 @@ a {
 .t-sky { border-top-color: $sky; }
 .t-mint { border-top-color: $teal; }
 
-// Numeri (Flexbox)
+// Numeri
 .stats {
   display: flex;
   flex-wrap: wrap;
@@ -154,7 +154,7 @@ a {
   }
 }
 
-// Pagina CV
+// CV
 .cv-layout {
   display: grid;
   gap: 30px;
@@ -183,7 +183,7 @@ a {
   border-color: $violet;
 }
 
-.hp { display: none; } // campo anti-spam
+.hp { display: none; }
 
 // Footer
 .site-footer {

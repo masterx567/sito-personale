@@ -53,7 +53,7 @@
     </div>
 
     <div class="col-lg-7">
-      <!-- Il form invia tramite Formspree: l'email non compare mai nel codice della pagina -->
+      <!-- form contatti (invio con Formspree) -->
       <form class="card-ink" action="https://formspree.io/f/FORMSPREE_ID" method="POST">
         <div class="row g-3">
           <div class="col-md-6">
@@ -82,7 +82,7 @@
             <label for="messaggio" class="form-label">Messaggio *</label>
             <textarea class="form-control" id="messaggio" name="messaggio" rows="6" required minlength="10"></textarea>
           </div>
-          <!-- honeypot anti-bot: i bot lo compilano, le persone no -->
+          <!-- campo nascosto anti-spam -->
           <div class="hp" aria-hidden="true">
             <label for="_gotcha">Non compilare</label>
             <input type="text" id="_gotcha" name="_gotcha" tabindex="-1" autocomplete="off">
