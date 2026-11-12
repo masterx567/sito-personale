@@ -1,0 +1,194 @@
+@use "variables" as *;
+
+// Stili generali
+body {
+  background: $paper;
+  color: $ink;
+  font-family: $font-body;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: $font-display;
+  font-weight: 700;
+}
+
+a {
+  color: $violet;
+}
+
+.text-muted-ink {
+  color: $muted;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  &:focus { left: 8px; top: 8px; background: $yellow; padding: 8px; }
+}
+
+// Menu
+.site-nav {
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+
+  .navbar-brand { font-weight: 700; }
+
+  .nav-link {
+    color: $ink;
+    &:hover { color: $violet; }
+    &.active { color: $violet; font-weight: 600; }
+  }
+}
+
+// Bottoni
+.btn-ink {
+  background: $violet;
+  color: #fff;
+  border-radius: 8px;
+  &:hover { background: $violet-dark; color: #fff; }
+}
+
+.btn-outline-ink {
+  border: 1px solid $violet;
+  color: $violet;
+  border-radius: 8px;
+  &:hover { background: $violet; color: #fff; }
+}
+
+.tag {
+  display: inline-block;
+  background: #eee;
+  border-radius: 4px;
+  padding: 2px 8px;
+  margin: 0 4px 6px 0;
+  font-size: 14px;
+}
+
+.card-ink {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: $radius;
+  padding: 20px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 700;
+  color: $violet;
+}
+
+// Home
+.hero {
+  padding: 40px 0;
+
+  h1 { font-size: 40px; }
+
+  .photo {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}
+
+.status-pill {
+  display: inline-block;
+  background: $mint;
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 14px;
+}
+
+// Griglia progetti (CSS Grid)
+.bento {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+
+  @include up($bp-md) { grid-template-columns: 1fr 1fr; }
+  @include up($bp-lg) { grid-template-columns: 1fr 1fr 1fr; }
+}
+
+.tile {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-top: 5px solid $violet;
+  border-radius: $radius;
+  padding: 20px;
+  color: $ink;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  &:hover { box-shadow: 0 4px 12px rgba(0, 0, 0, .1); color: $ink; }
+
+  .tile-icon { font-size: 28px; color: $violet; }
+  h3 { font-size: 19px; margin: 0; }
+  .tile-foot { margin-top: auto; font-size: 14px; color: $violet; }
+}
+
+.t-teal { border-top-color: $teal; }
+.t-coral { border-top-color: $coral; }
+.t-yellow { border-top-color: $yellow; }
+.t-sky { border-top-color: $sky; }
+.t-mint { border-top-color: $teal; }
+
+// Numeri (Flexbox)
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+
+  .stat {
+    flex: 1 1 150px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: $radius;
+    padding: 15px;
+    text-align: center;
+
+    strong { display: block; font-size: 32px; color: $violet; }
+  }
+}
+
+// Pagina CV
+.cv-layout {
+  display: grid;
+  gap: 30px;
+  @include up($bp-lg) { grid-template-columns: 280px 1fr; }
+}
+
+.timeline {
+  list-style: none;
+  padding-left: 20px;
+  border-left: 3px solid $violet;
+
+  li { margin-bottom: 25px; }
+  .when { font-size: 14px; color: $muted; }
+  h3 { font-size: 18px; }
+}
+
+.lang-bar {
+  height: 8px;
+  background: #eee;
+  border-radius: 4px;
+  span { display: block; height: 100%; background: $violet; border-radius: 4px; }
+}
+
+// Form
+.form-control:focus, .form-select:focus {
+  border-color: $violet;
+}
+
+.hp { display: none; } // campo anti-spam
+
+// Footer
+.site-footer {
+  border-top: 1px solid #ddd;
+  margin-top: 50px;
+  padding: 25px 0;
+  .social a { font-size: 22px; margin-right: 12px; color: $ink; }
+}

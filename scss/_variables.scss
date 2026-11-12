@@ -1,0 +1,25 @@
+// Colori
+$ink: #222233;
+$paper: #f7f7fb;
+$muted: #666677;
+$violet: #6c4cf0;
+$violet-dark: #5236c9;
+$yellow: #ffc94d;
+$coral: #ff7a6b;
+$teal: #1fb5a3;
+$sky: #4aa8ff;
+$mint: #d9f5ea;
+
+// Font
+$font-display: "Poppins", sans-serif;
+$font-body: "Open Sans", sans-serif;
+
+$radius: 10px;
+
+// Breakpoint
+$bp-md: 768px;
+$bp-lg: 992px;
+
+@mixin up($bp) {
+  @media (min-width: $bp) { @content; }
+}
