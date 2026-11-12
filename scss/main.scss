@@ -1,0 +1,270 @@
+// importo colori, font e il mixin per le media query
+@use "variables" as *;
+
+/* ===== STILI GENERALI ===== */
+body {
+  background: $sfondo;
+  color: $testo;
+  font-family: $font-testo;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: $font-titoli;
+  font-weight: 700;
+}
+
+a {
+  color: $viola;
+}
+
+.testo-grigio {
+  color: $grigio;
+}
+
+.titoletto-sezione {
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 700;
+  color: $viola;
+}
+
+/* ===== MENU ===== */
+.barra-menu {
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+
+  .navbar-brand {
+    font-weight: 700;
+  }
+
+  .nav-link {
+    color: $testo;
+
+    &:hover {
+      color: $viola;
+    }
+
+    &.active {
+      color: $viola;
+      font-weight: 600;
+    }
+  }
+
+  // menu mobile: la checkbox e' nascosta, quando la clicco (tramite la label) il menu si apre
+  .checkbox-menu {
+    display: none;
+  }
+
+  .navbar-toggler {
+    cursor: pointer;
+  }
+
+  .checkbox-menu:checked ~ .navbar-collapse {
+    display: block;
+  }
+}
+
+/* ===== BOTTONI ===== */
+.bottone-pieno {
+  background: $viola;
+  color: #fff;
+  border-radius: 8px;
+
+  &:hover {
+    background: $viola-scuro;
+    color: #fff;
+  }
+}
+
+.bottone-bordo {
+  border: 1px solid $viola;
+  color: $viola;
+  border-radius: 8px;
+
+  &:hover {
+    background: $viola;
+    color: #fff;
+  }
+}
+
+/* ===== RIQUADRI E ETICHETTE DELLE COMPETENZE ===== */
+.riquadro {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: $bordo;
+  padding: 20px;
+}
+
+.etichetta-competenza {
+  display: inline-block;
+  background: #eee;
+  border-radius: 4px;
+  padding: 2px 8px;
+  margin: 0 4px 6px 0;
+  font-size: 14px;
+}
+
+/* ===== HOME: PRESENTAZIONE ===== */
+.sezione-presentazione {
+  padding: 40px 0;
+
+  h1 {
+    font-size: 40px;
+  }
+
+  .foto-profilo {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}
+
+.etichetta-ruolo {
+  display: inline-block;
+  background: $verde-chiaro;
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 14px;
+}
+
+/* ===== HOME: NUMERI (flexbox) ===== */
+.riga-numeri {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+
+  .box-numero {
+    flex: 1 1 150px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: $bordo;
+    padding: 15px;
+    text-align: center;
+
+    strong {
+      display: block;
+      font-size: 32px;
+      color: $viola;
+    }
+  }
+}
+
+/* ===== HOME: PROGETTI (grid) ===== */
+// su mobile 1 colonna, su tablet 2, su desktop 3
+.griglia-progetti {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+
+  @include schermo($tablet) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include schermo($desktop) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.card-progetto {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-top: 5px solid $viola;
+  border-radius: $bordo;
+  padding: 20px;
+  color: $testo;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    color: $testo;
+  }
+
+  .icona-progetto {
+    font-size: 28px;
+    color: $viola;
+  }
+
+  h3 {
+    font-size: 19px;
+    margin: 0;
+  }
+
+  .strumenti-progetto {
+    margin-top: auto;
+    font-size: 14px;
+    color: $viola;
+  }
+}
+
+// colore del bordo in alto di ogni card
+.bordo-verde { border-top-color: $verde; }
+.bordo-rosso { border-top-color: $rosso; }
+.bordo-giallo { border-top-color: $giallo; }
+.bordo-azzurro { border-top-color: $azzurro; }
+
+/* ===== PAGINA CV ===== */
+// due colonne solo da desktop in su
+.cv-due-colonne {
+  display: grid;
+  gap: 30px;
+
+  @include schermo($desktop) {
+    grid-template-columns: 280px 1fr;
+  }
+}
+
+.elenco-esperienze {
+  list-style: none;
+  padding-left: 20px;
+  border-left: 3px solid $viola;
+
+  li {
+    margin-bottom: 25px;
+  }
+
+  .periodo {
+    font-size: 14px;
+    color: $grigio;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+}
+
+.barra-livello-lingua {
+  height: 8px;
+  background: #eee;
+  border-radius: 4px;
+
+  span {
+    display: block;
+    height: 100%;
+    background: $viola;
+    border-radius: 4px;
+  }
+}
+
+/* ===== FORM ===== */
+.form-control:focus,
+.form-select:focus {
+  border-color: $viola;
+}
+
+/* ===== FOOTER ===== */
+.piede-pagina {
+  border-top: 1px solid #ddd;
+  margin-top: 50px;
+  padding: 25px 0;
+
+  .icone-social a {
+    font-size: 22px;
+    margin-right: 12px;
+    color: $testo;
+  }
+}
