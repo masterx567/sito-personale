@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>Presentazione sito personale</title>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<style>
+@page { size: 1280px 720px; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: "Open Sans", sans-serif; color: #222233; }
+.slide { width: 1280px; height: 720px; padding: 60px 80px; background: #f7f7fb; position: relative; overflow: hidden; page-break-after: always; }
+.slide::before { content: ""; position: absolute; left: 0; top: 0; width: 100%; height: 10px; background: #6c4cf0; }
+.num { position: absolute; right: 50px; bottom: 30px; color: #666677; font-size: 16px; }
+h1, h2, h3 { font-family: "Poppins", sans-serif; margin: 0; }
+h1 { font-size: 64px; line-height: 1.1; }
+h2 { font-size: 44px; margin-bottom: 8px; }
+.sub { color: #666677; font-size: 22px; margin: 0 0 36px; }
+.label { color: #6c4cf0; font-weight: 700; text-transform: uppercase; font-size: 16px; letter-spacing: 1px; margin-bottom: 10px; }
+p, li { font-size: 22px; line-height: 1.5; }
+.cards { display: grid; gap: 22px; }
+.c2 { grid-template-columns: 1fr 1fr; } .c3 { grid-template-columns: repeat(3, 1fr); }
+.card { background: #fff; border: 1px solid #ddd; border-top: 5px solid #6c4cf0; border-radius: 10px; padding: 22px 26px; }
+.card h3 { font-size: 22px; margin-bottom: 6px; }
+.card p { font-size: 18px; margin: 0; color: #444; }
+.t { border-top-color: #1fb5a3; } .co { border-top-color: #ff7a6b; } .y { border-top-color: #ffc94d; } .s { border-top-color: #4aa8ff; }
+.cover { background: #6c4cf0; color: #fff; display: flex; align-items: center; gap: 70px; }
+.cover::before { display: none; }
+.cover .label { color: #ffc94d; }
+.cover img { width: 320px; height: 320px; border-radius: 50%; object-fit: cover; border: 6px solid #fff; }
+.cover .num { color: #ddd; }
+.check { list-style: none; padding: 0; columns: 2; column-gap: 40px; }
+.check li { font-size: 20px; margin-bottom: 12px; break-inside: avoid; }
+.check li::before { content: "✓ "; color: #1fb5a3; font-weight: 700; }
+.links p { font-size: 20px; margin: 4px 0 18px; }
+.links a { color: #6c4cf0; font-size: 28px; font-weight: 700; text-decoration: none; font-family: "Poppins"; }
+table { border-collapse: collapse; width: 100%; font-size: 18px; background: #fff; }
+td { border-bottom: 1px solid #e3e3ea; padding: 9px 14px; }
+td:last-child { color: #666677; }
+</style>
+</head>
+<body>
+
+<section class="slide cover">
+  <img src="../img/profile.jpg" alt="">
+  <div>
+    <p class="label">Start2impact · Progetto Sviluppo Web</p>
+    <h1>Il mio sito personale</h1>
+    <p style="font-size:26px">Daniele Acunzo</p>
+    <p style="font-size:20px">masterx567.github.io/sito-personale</p>
+  </div>
+  <span class="num">1</span>
+</section>
+
+<section class="slide">
+  <p class="label">Obiettivo</p>
+  <h2>Perché questo sito</h2>
+  <p class="sub">Volevo un posto unico dove presentarmi a chi cerca un profilo junior.</p>
+  <div class="cards c3">
+    <div class="card"><h3>A chi parlo</h3><p>Recruiter e aziende che cercano un junior in ambito dati, automazione e AI.</p></div>
+    <div class="card t"><h3>Cosa mostro</h3><p>Chi sono, cosa ho studiato e i progetti che ho consegnato al Master.</p></div>
+    <div class="card co"><h3>Cosa chiedo</h3><p>Di contattarmi tramite il form, senza email o numero in chiaro.</p></div>
+  </div>
+  <span class="num">2</span>
+</section>
+
+<section class="slide">
+  <p class="label">Design</p>
+  <h2>Scelte grafiche</h2>
+  <p class="sub">Ho guardato gli esempi di Figma e IxDF e ho scelto uno stile semplice.</p>
+  <div class="cards c2">
+    <div class="card"><h3>Colori</h3><p>Viola #6c4cf0 come colore principale, sfondo chiaro, pochi colori di accento per le card dei progetti.</p></div>
+    <div class="card t"><h3>Font</h3><p>Poppins per i titoli e Open Sans per il testo, presi da Google Fonts.</p></div>
+    <div class="card y"><h3>Card</h3><p>Card bianche con bordo sottile: il contenuto si legge bene e la pagina resta ordinata.</p></div>
+    <div class="card s"><h3>Mobile first</h3><p>Ho controllato ogni pagina su smartphone, tablet e desktop.</p></div>
+  </div>
+  <span class="num">3</span>
+</section>
+
+<section class="slide">
+  <p class="label">Struttura</p>
+  <h2>Le tre pagine</h2>
+  <p class="sub">Un menu in alto, sempre visibile, collega tutte le pagine.</p>
+  <div class="cards c3">
+    <div class="card"><h3>Home</h3><p>Presentazione con foto, alcuni numeri, competenze e i 10 progetti del Master in una griglia.</p></div>
+    <div class="card t"><h3>CV</h3><p>Pagina HTML con esperienze, formazione, competenze e lingue, su due colonne.</p></div>
+    <div class="card co"><h3>Contattami</h3><p>Form con nome, email, motivo del contatto e messaggio. Tutti i campi principali sono obbligatori.</p></div>
+  </div>
+  <span class="num">4</span>
+</section>
+
+<section class="slide">
+  <p class="label">Requisiti tecnici</p>
+  <h2>Cosa ho usato</h2>
+  <p class="sub">Tutti i requisiti della consegna, solo HTML e CSS.</p>
+  <ul class="check">
+    <li>Pagina CV in HTML</li>
+    <li>Pagina Contattami con form e attributi required</li>
+    <li>Bootstrap 5 come framework</li>
+    <li>Sass: variabili, nesting e un mixin</li>
+    <li>CSS Grid per progetti e CV</li>
+    <li>Flexbox per numeri e footer</li>
+    <li>Menu sticky, anche su mobile</li>
+    <li>Menu mobile che si apre senza JavaScript</li>
+    <li>Favicon con le mie iniziali</li>
+    <li>Tag Open Graph su ogni pagina</li>
+    <li>Sito 100% responsive</li>
+    <li>Pubblicato con GitHub Pages</li>
+  </ul>
+  <span class="num">5</span>
+</section>
+
+<section class="slide">
+  <p class="label">Progetti</p>
+  <h2>I lavori del Master</h2>
+  <p class="sub">Ogni card del sito apre la presentazione del progetto.</p>
+  <table>
+    <tr><td>Chi salta lo screening mammografico?</td><td>Machine Learning</td></tr>
+    <tr><td>Chi inquina e chi pulisce? 16 query</td><td>SQL</td></tr>
+    <tr><td>Quanto peggiorerà il diabete tra un anno?</td><td>Python, scikit-learn</td></tr>
+    <tr><td>Saresti sopravvissuto al Titanic?</td><td>Python, scikit-learn</td></tr>
+    <tr><td>10.841 app analizzate</td><td>Python, pandas</td></tr>
+    <tr><td>29.529 prodotti Amazon per un brand di moda</td><td>Tableau</td></tr>
+    <tr><td>Il mondo a tavola, paese per paese</td><td>Looker Studio</td></tr>
+    <tr><td>Agenzia viaggi Orizon · FileOrganizer</td><td>Python</td></tr>
+    <tr><td>Landing page Depyl</td><td>HTML, CSS</td></tr>
+  </table>
+  <span class="num">6</span>
+</section>
+
+<section class="slide">
+  <p class="label">Prossimi passi</p>
+  <h2>Cosa vorrei migliorare</h2>
+  <p class="sub">Il sito crescerà insieme al mio percorso.</p>
+  <div class="cards c3">
+    <div class="card"><h3>EmailJS</h3><p>Collegare il form per ricevere davvero i messaggi via email.</p></div>
+    <div class="card t"><h3>Nuovi progetti</h3><p>Aggiungere una card per ogni nuovo lavoro del Master.</p></div>
+    <div class="card co"><h3>Inglese</h3><p>Una versione del sito in inglese.</p></div>
+  </div>
+  <span class="num">7</span>
+</section>
+
+<section class="slide links">
+  <p class="label">Link</p>
+  <h2>Grazie!</h2>
+  <p class="sub">Il sito e il codice sono online.</p>
+  <p>Sito pubblicato con GitHub Pages</p>
+  <a href="https://masterx567.github.io/sito-personale/">masterx567.github.io/sito-personale</a>
+  <p style="margin-top:30px">Codice su GitHub</p>
+  <a href="https://github.com/masterx567/sito-personale">github.com/masterx567/sito-personale</a>
+  <span class="num">8</span>
+</section>
+
+</body>
+</html>
