@@ -1,25 +1,29 @@
-// Colori
-$ink: #222233;
-$paper: #f7f7fb;
-$muted: #666677;
-$violet: #6c4cf0;
-$violet-dark: #5236c9;
-$yellow: #ffc94d;
-$coral: #ff7a6b;
-$teal: #1fb5a3;
-$sky: #4aa8ff;
-$mint: #d9f5ea;
+// COLORI
+$viola: #6c4cf0;
+$viola-scuro: #5236c9;
+$testo: #222233;
+$grigio: #666677;
+$sfondo: #f7f7fb;
+$verde: #1fb5a3;
+$verde-chiaro: #d9f5ea;
+$rosso: #ff7a6b;
+$giallo: #ffc94d;
+$azzurro: #4aa8ff;
 
-// Font
-$font-display: "Poppins", sans-serif;
-$font-body: "Open Sans", sans-serif;
+// FONT (da Google Fonts)
+$font-titoli: "Poppins", sans-serif;
+$font-testo: "Open Sans", sans-serif;
 
-$radius: 10px;
+// arrotondamento dei bordi
+$bordo: 10px;
 
-// Breakpoint
-$bp-md: 768px;
-$bp-lg: 992px;
+// BREAKPOINT (uguali a quelli di Bootstrap)
+$tablet: 768px;
+$desktop: 992px;
 
-@mixin up($bp) {
-  @media (min-width: $bp) { @content; }
+// mixin per scrivere le media query piu' velocemente
+@mixin schermo($larghezza) {
+  @media (min-width: $larghezza) {
+    @content;
+  }
 }

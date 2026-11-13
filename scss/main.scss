@@ -1,64 +1,99 @@
+// importo colori, font e il mixin per i breakpoint
 @use "variables" as *;
 
-// Generale
+/* ===== STILI GENERALI ===== */
 body {
-  background: $paper;
-  color: $ink;
-  font-family: $font-body;
+  background: $sfondo;
+  color: $testo;
+  font-family: $font-testo;
   line-height: 1.6;
 }
 
 h1, h2, h3 {
-  font-family: $font-display;
+  font-family: $font-titoli;
   font-weight: 700;
 }
 
 a {
-  color: $violet;
+  color: $viola;
 }
 
-.text-muted-ink {
-  color: $muted;
+.testo-grigio {
+  color: $grigio;
 }
 
-.skip-link {
-  position: absolute;
-  left: -999px;
-  &:focus { left: 8px; top: 8px; background: $yellow; padding: 8px; }
+.etichetta {
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 700;
+  color: $viola;
 }
 
-// Menu
-.site-nav {
+/* ===== MENU ===== */
+.menu {
   background: #fff;
   border-bottom: 1px solid #ddd;
 
-  .navbar-brand { font-weight: 700; }
-
-  // menu mobile senza JavaScript
-  .nav-toggle { display: none; }
-  .navbar-toggler { cursor: pointer; }
-  .nav-toggle:checked ~ .navbar-collapse { display: block; }
+  .navbar-brand {
+    font-weight: 700;
+  }
 
   .nav-link {
-    color: $ink;
-    &:hover { color: $violet; }
-    &.active { color: $violet; font-weight: 600; }
+    color: $testo;
+
+    &:hover {
+      color: $viola;
+    }
+
+    &.active {
+      color: $viola;
+      font-weight: 600;
+    }
+  }
+
+  // menu mobile: la checkbox e' nascosta, quando la clicco (tramite la label) il menu si apre
+  .nav-toggle {
+    display: none;
+  }
+
+  .navbar-toggler {
+    cursor: pointer;
+  }
+
+  .nav-toggle:checked ~ .navbar-collapse {
+    display: block;
   }
 }
 
-// Bottoni
-.btn-ink {
-  background: $violet;
+/* ===== BOTTONI ===== */
+.btn-viola {
+  background: $viola;
   color: #fff;
   border-radius: 8px;
-  &:hover { background: $violet-dark; color: #fff; }
+
+  &:hover {
+    background: $viola-scuro;
+    color: #fff;
+  }
 }
 
-.btn-outline-ink {
-  border: 1px solid $violet;
-  color: $violet;
+.btn-bordo {
+  border: 1px solid $viola;
+  color: $viola;
   border-radius: 8px;
-  &:hover { background: $violet; color: #fff; }
+
+  &:hover {
+    background: $viola;
+    color: #fff;
+  }
+}
+
+/* ===== BOX E TAG ===== */
+.box {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: $bordo;
+  padding: 20px;
 }
 
 .tag {
@@ -70,27 +105,15 @@ a {
   font-size: 14px;
 }
 
-.card-ink {
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: $radius;
-  padding: 20px;
-}
-
-.eyebrow {
-  text-transform: uppercase;
-  font-size: 13px;
-  font-weight: 700;
-  color: $violet;
-}
-
-// Home
-.hero {
+/* ===== HOME: PRESENTAZIONE ===== */
+.presentazione {
   padding: 40px 0;
 
-  h1 { font-size: 40px; }
+  h1 {
+    font-size: 40px;
+  }
 
-  .photo {
+  .foto {
     width: 220px;
     height: 220px;
     object-fit: cover;
@@ -98,101 +121,150 @@ a {
   }
 }
 
-.status-pill {
+.badge-ruolo {
   display: inline-block;
-  background: $mint;
+  background: $verde-chiaro;
   border-radius: 20px;
   padding: 4px 12px;
   font-size: 14px;
 }
 
-// Progetti
-.bento {
+/* ===== HOME: NUMERI (flexbox) ===== */
+.numeri {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+
+  .numero {
+    flex: 1 1 150px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: $bordo;
+    padding: 15px;
+    text-align: center;
+
+    strong {
+      display: block;
+      font-size: 32px;
+      color: $viola;
+    }
+  }
+}
+
+/* ===== HOME: PROGETTI (grid) ===== */
+// su mobile 1 colonna, su tablet 2, su desktop 3
+.griglia-progetti {
   display: grid;
   gap: 20px;
   grid-template-columns: 1fr;
 
-  @include up($bp-md) { grid-template-columns: 1fr 1fr; }
-  @include up($bp-lg) { grid-template-columns: 1fr 1fr 1fr; }
+  @include schermo($tablet) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include schermo($desktop) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
-.tile {
+.card-progetto {
   background: #fff;
   border: 1px solid #ddd;
-  border-top: 5px solid $violet;
-  border-radius: $radius;
+  border-top: 5px solid $viola;
+  border-radius: $bordo;
   padding: 20px;
-  color: $ink;
+  color: $testo;
   text-decoration: none;
   display: flex;
   flex-direction: column;
   gap: 8px;
 
-  &:hover { box-shadow: 0 4px 12px rgba(0, 0, 0, .1); color: $ink; }
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    color: $testo;
+  }
 
-  .tile-icon { font-size: 28px; color: $violet; }
-  h3 { font-size: 19px; margin: 0; }
-  .tile-foot { margin-top: auto; font-size: 14px; color: $violet; }
-}
+  .icona {
+    font-size: 28px;
+    color: $viola;
+  }
 
-.t-teal { border-top-color: $teal; }
-.t-coral { border-top-color: $coral; }
-.t-yellow { border-top-color: $yellow; }
-.t-sky { border-top-color: $sky; }
-.t-mint { border-top-color: $teal; }
+  h3 {
+    font-size: 19px;
+    margin: 0;
+  }
 
-// Numeri
-.stats {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-
-  .stat {
-    flex: 1 1 150px;
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: $radius;
-    padding: 15px;
-    text-align: center;
-
-    strong { display: block; font-size: 32px; color: $violet; }
+  .strumenti {
+    margin-top: auto;
+    font-size: 14px;
+    color: $viola;
   }
 }
 
-// CV
-.cv-layout {
+// colore del bordo in alto di ogni card
+.verde { border-top-color: $verde; }
+.rosso { border-top-color: $rosso; }
+.giallo { border-top-color: $giallo; }
+.azzurro { border-top-color: $azzurro; }
+
+/* ===== PAGINA CV ===== */
+// due colonne solo da desktop in su
+.cv-colonne {
   display: grid;
   gap: 30px;
-  @include up($bp-lg) { grid-template-columns: 280px 1fr; }
+
+  @include schermo($desktop) {
+    grid-template-columns: 280px 1fr;
+  }
 }
 
 .timeline {
   list-style: none;
   padding-left: 20px;
-  border-left: 3px solid $violet;
+  border-left: 3px solid $viola;
 
-  li { margin-bottom: 25px; }
-  .when { font-size: 14px; color: $muted; }
-  h3 { font-size: 18px; }
+  li {
+    margin-bottom: 25px;
+  }
+
+  .data {
+    font-size: 14px;
+    color: $grigio;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
 }
 
-.lang-bar {
+.barra-lingua {
   height: 8px;
   background: #eee;
   border-radius: 4px;
-  span { display: block; height: 100%; background: $violet; border-radius: 4px; }
+
+  span {
+    display: block;
+    height: 100%;
+    background: $viola;
+    border-radius: 4px;
+  }
 }
 
-// Form
-.form-control:focus, .form-select:focus {
-  border-color: $violet;
+/* ===== FORM ===== */
+.form-control:focus,
+.form-select:focus {
+  border-color: $viola;
 }
 
-
-// Footer
-.site-footer {
+/* ===== FOOTER ===== */
+.footer {
   border-top: 1px solid #ddd;
   margin-top: 50px;
   padding: 25px 0;
-  .social a { font-size: 22px; margin-right: 12px; color: $ink; }
+
+  .social a {
+    font-size: 22px;
+    margin-right: 12px;
+    color: $testo;
+  }
 }
