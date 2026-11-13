@@ -34,6 +34,11 @@ a {
 
   .navbar-brand { font-weight: 700; }
 
+  // menu mobile senza JavaScript
+  .nav-toggle { display: none; }
+  .navbar-toggler { cursor: pointer; }
+  .nav-toggle:checked ~ .navbar-collapse { display: block; }
+
   .nav-link {
     color: $ink;
     &:hover { color: $violet; }
@@ -183,7 +188,6 @@ a {
   border-color: $violet;
 }
 
-.hp { display: none; }
 
 // Footer
 .site-footer {

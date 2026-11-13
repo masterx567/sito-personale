@@ -36,6 +36,15 @@ a {
 .site-nav .navbar-brand {
   font-weight: 700;
 }
+.site-nav .nav-toggle {
+  display: none;
+}
+.site-nav .navbar-toggler {
+  cursor: pointer;
+}
+.site-nav .nav-toggle:checked ~ .navbar-collapse {
+  display: block;
+}
 .site-nav .nav-link {
   color: #222233;
 }
@@ -236,10 +245,6 @@ a {
 
 .form-control:focus, .form-select:focus {
   border-color: #6c4cf0;
-}
-
-.hp {
-  display: none;
 }
 
 .site-footer {
