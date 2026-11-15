@@ -107,7 +107,9 @@ a {
 
 /* ===== HOME: PRESENTAZIONE ===== */
 .sezione-presentazione {
-  padding: 40px 0;
+  // solo sopra e sotto, cosi' non tolgo il padding laterale del container
+  padding-top: 40px;
+  padding-bottom: 40px;
 
   h1 {
     font-size: 40px;
