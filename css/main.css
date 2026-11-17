@@ -1,4 +1,22 @@
 /* ===== STILI GENERALI ===== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+section[id] {
+  scroll-margin-top: 80px;
+}
+
 body {
   background: #f7f7fb;
   color: #222233;
@@ -56,6 +74,7 @@ a {
 
 /* ===== BOTTONI ===== */
 .bottone-pieno {
+  transition: background 0.2s;
   background: #6c4cf0;
   color: #fff;
   border-radius: 8px;
@@ -163,9 +182,11 @@ a {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 .card-progetto:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   color: #222233;
 }
 .card-progetto .icona-progetto {
@@ -214,8 +235,11 @@ a {
   padding-left: 20px;
   border-left: 3px solid #6c4cf0;
 }
-.elenco-esperienze li {
+.elenco-esperienze > li {
   margin-bottom: 25px;
+}
+.elenco-esperienze ul li {
+  margin-bottom: 4px;
 }
 .elenco-esperienze .periodo {
   font-size: 14px;
@@ -241,6 +265,18 @@ a {
 .form-control:focus,
 .form-select:focus {
   border-color: #6c4cf0;
+}
+
+.form-control:user-invalid,
+.form-select:user-invalid {
+  border-color: #ff7a6b;
+}
+
+/* ===== BOTTONI E LINK DA TASTIERA ===== */
+a:focus-visible,
+.btn:focus-visible {
+  outline: 3px solid #6c4cf0;
+  outline-offset: 2px;
 }
 
 /* ===== FOOTER ===== */

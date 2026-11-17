@@ -2,6 +2,27 @@
 @use "variables" as *;
 
 /* ===== STILI GENERALI ===== */
+// scorrimento morbido quando clicco su "Progetti" nel menu
+html {
+  scroll-behavior: smooth;
+}
+
+// il footer resta sempre in fondo alla pagina, anche nelle pagine corte
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+// le sezioni con un id non finiscono sotto il menu sticky
+section[id] {
+  scroll-margin-top: 80px;
+}
+
 body {
   background: $sfondo;
   color: $testo;
@@ -67,6 +88,7 @@ a {
 
 /* ===== BOTTONI ===== */
 .bottone-pieno {
+  transition: background 0.2s;
   background: $viola;
   color: #fff;
   border-radius: 8px;
@@ -181,8 +203,12 @@ a {
   flex-direction: column;
   gap: 8px;
 
+  transition: transform 0.2s, box-shadow 0.2s;
+
+  // al passaggio del mouse la card si alza un po': si capisce che si puo' cliccare
   &:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     color: $testo;
   }
 
@@ -225,8 +251,13 @@ a {
   padding-left: 20px;
   border-left: 3px solid $viola;
 
-  li {
+  // solo le voci principali (non i punti elenco interni) hanno lo spazio grande
+  > li {
     margin-bottom: 25px;
+  }
+
+  ul li {
+    margin-bottom: 4px;
   }
 
   .periodo {
@@ -256,6 +287,20 @@ a {
 .form-control:focus,
 .form-select:focus {
   border-color: $viola;
+}
+
+// bordo rosso sui campi sbagliati, solo dopo che l'utente li ha toccati
+.form-control:user-invalid,
+.form-select:user-invalid {
+  border-color: $rosso;
+}
+
+/* ===== BOTTONI E LINK DA TASTIERA ===== */
+// contorno visibile quando navigo con il tasto Tab
+a:focus-visible,
+.btn:focus-visible {
+  outline: 3px solid $viola;
+  outline-offset: 2px;
 }
 
 /* ===== FOOTER ===== */
