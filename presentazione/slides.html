@@ -19,9 +19,9 @@ h2 { font-size: 44px; margin-bottom: 8px; }
 p, li { font-size: 22px; line-height: 1.5; }
 .cards { display: grid; gap: 22px; }
 .c2 { grid-template-columns: 1fr 1fr; } .c3 { grid-template-columns: repeat(3, 1fr); }
-.card { background: #fff; border: 1px solid #ddd; border-top: 5px solid #6c4cf0; border-radius: 10px; padding: 22px 26px; }
-.card h3 { font-size: 22px; margin-bottom: 6px; }
-.card p { font-size: 18px; margin: 0; color: #444; }
+.card { background: #fff; border: 1px solid #ddd; border-top: 5px solid #6c4cf0; border-radius: 10px; padding: 30px 32px; }
+.card h3 { font-size: 26px; margin-bottom: 10px; }
+.card p { font-size: 21px; margin: 0; color: #444; }
 .t { border-top-color: #1fb5a3; } .co { border-top-color: #ff7a6b; } .y { border-top-color: #ffc94d; } .s { border-top-color: #4aa8ff; }
 .cover { background: #6c4cf0; color: #fff; display: flex; align-items: center; gap: 70px; }
 .cover::before { display: none; }
@@ -29,14 +29,17 @@ p, li { font-size: 22px; line-height: 1.5; }
 .cover img { width: 320px; height: 320px; border-radius: 50%; object-fit: cover; border: 6px solid #fff; }
 .cover .num { color: #ddd; }
 .check { list-style: none; padding: 0; columns: 2; column-gap: 40px; }
-.check li { font-size: 20px; margin-bottom: 12px; break-inside: avoid; }
+.check li { font-size: 23px; margin-bottom: 16px; break-inside: avoid; }
 .check li::before { content: "✓ "; color: #1fb5a3; font-weight: 700; }
 .links p { font-size: 20px; margin: 4px 0 18px; }
 .links a { color: #6c4cf0; font-size: 28px; font-weight: 700; text-decoration: none; font-family: "Poppins"; }
-table { border-collapse: collapse; width: 100%; font-size: 18px; background: #fff; }
+table { border-collapse: collapse; width: 100%; font-size: 19px; background: #fff; }
 td { border-bottom: 1px solid #e3e3ea; padding: 9px 14px; }
 td:last-child { color: #666677; }
 td a { color: #6c4cf0; text-decoration: none; font-weight: 600; }
+.compatta .card { padding: 20px 26px; }
+.compatta .card p { font-size: 19px; }
+.compatta .sub { margin-bottom: 24px; }
 </style>
 </head>
 <body>
@@ -78,6 +81,18 @@ td a { color: #6c4cf0; text-decoration: none; font-weight: 600; }
 </section>
 
 <section class="slide">
+  <p class="label">Esperienza d'uso</p>
+  <h2>Piccoli dettagli per chi visita</h2>
+  <p class="sub">Tutto fatto solo con CSS, senza JavaScript.</p>
+  <div class="cards c3">
+    <div class="card"><h3>Card cliccabili</h3><p>Al passaggio del mouse la card si alza e in basso c'è scritto "Apri la presentazione".</p></div>
+    <div class="card t"><h3>Form chiaro</h3><p>I campi sbagliati diventano rossi solo dopo averli toccati. Dopo l'invio si apre una pagina di conferma.</p></div>
+    <div class="card co"><h3>Navigazione</h3><p>Menu sempre visibile, scorrimento morbido e footer sempre in fondo alla pagina.</p></div>
+  </div>
+  <span class="num">4</span>
+</section>
+
+<section class="slide compatta">
   <p class="label">Struttura</p>
   <h2>Le pagine del sito</h2>
   <p class="sub">Un menu in alto, sempre visibile, collega tutte le pagine.</p>
@@ -88,7 +103,7 @@ td a { color: #6c4cf0; text-decoration: none; font-weight: 600; }
     <div class="card y"><h3>Messaggio inviato</h3><p>Pagina di conferma che si apre dopo l'invio del form.</p></div>
     <div class="card s"><h3>Privacy e cookie</h3><p>Informativa privacy e cookie policy, collegata nel footer e nel form.</p></div>
   </div>
-  <span class="num">4</span>
+  <span class="num">5</span>
 </section>
 
 <section class="slide">
@@ -109,7 +124,7 @@ td a { color: #6c4cf0; text-decoration: none; font-weight: 600; }
     <li>Sito 100% responsive</li>
     <li>Pubblicato con GitHub Pages</li>
   </ul>
-  <span class="num">5</span>
+  <span class="num">6</span>
 </section>
 
 <section class="slide">
@@ -117,17 +132,17 @@ td a { color: #6c4cf0; text-decoration: none; font-weight: 600; }
   <h2>I lavori del Master</h2>
   <p class="sub">Clicca sul titolo per aprire la presentazione del progetto.</p>
   <table>
-    <tr><td><a href="https://masterx567.github.io/sito-personale/progetti/screening-mammografico.pdf">Chi salta lo screening mammografico?</a></td><td>Machine Learning</td></tr>
-    <tr><td><a href="https://masterx567.github.io/sito-personale/progetti/sql-energia.pdf">Chi inquina e chi pulisce? 16 query</a></td><td>SQL</td></tr>
-    <tr><td><a href="https://masterx567.github.io/sito-personale/progetti/ml-diabete.pdf">Quanto peggiorerà il diabete tra un anno?</a></td><td>Python, scikit-learn</td></tr>
-    <tr><td><a href="https://masterx567.github.io/sito-personale/progetti/ml-titanic.pdf">Saresti sopravvissuto al Titanic?</a></td><td>Python, scikit-learn</td></tr>
-    <tr><td><a href="https://masterx567.github.io/sito-personale/progetti/google-play.html">10.841 app analizzate</a></td><td>Python, pandas</td></tr>
-    <tr><td><a href="https://masterx567.github.io/sito-personale/progetti/tableau-moda.pdf">29.529 prodotti Amazon per un brand di moda</a></td><td>Tableau</td></tr>
-    <tr><td><a href="https://masterx567.github.io/sito-personale/progetti/looker-obesita.pdf">Il mondo a tavola, paese per paese</a></td><td>Looker Studio</td></tr>
-    <tr><td><a href="https://masterx567.github.io/sito-personale/progetti/python-orizon.html">Agenzia viaggi Orizon</a> · <a href="https://masterx567.github.io/sito-personale/progetti/fileorganizer.html">FileOrganizer</a></td><td>Python</td></tr>
-    <tr><td><a href="https://masterx567.github.io/sito-personale/progetti/landing-depyl/index.html">Landing page Depyl</a></td><td>HTML, CSS</td></tr>
+    <tr><td><a href="https://masterx567.github.io/sito-personale/progetti/screening-mammografico.pdf">Screening mammografico: progetto di un modello predittivo</a></td><td>Machine Learning</td></tr>
+    <tr><td><a href="https://masterx567.github.io/sito-personale/progetti/sql-energia.pdf">Analisi SQL sulla transizione energetica</a></td><td>SQL</td></tr>
+    <tr><td><a href="https://masterx567.github.io/sito-personale/progetti/ml-diabete.pdf">Previsione della progressione del diabete</a></td><td>Python, scikit-learn</td></tr>
+    <tr><td><a href="https://masterx567.github.io/sito-personale/progetti/ml-titanic.pdf">Albero di decisione sul dataset Titanic</a></td><td>Python, scikit-learn</td></tr>
+    <tr><td><a href="https://masterx567.github.io/sito-personale/progetti/google-play.html">Analisi del mercato delle app</a></td><td>Python, pandas</td></tr>
+    <tr><td><a href="https://masterx567.github.io/sito-personale/progetti/tableau-moda.pdf">Analisi di mercato per un brand di moda</a></td><td>Tableau</td></tr>
+    <tr><td><a href="https://masterx567.github.io/sito-personale/progetti/looker-obesita.pdf">Dashboard su alimentazione e obesità</a></td><td>Looker Studio</td></tr>
+    <tr><td><a href="https://masterx567.github.io/sito-personale/progetti/python-orizon.html">Gestionale agenzia viaggi</a> · <a href="https://masterx567.github.io/sito-personale/progetti/fileorganizer.html">FileOrganizer</a></td><td>Python</td></tr>
+    <tr><td><a href="https://masterx567.github.io/sito-personale/progetti/landing-depyl/index.html">Landing page in HTML e CSS</a></td><td>HTML, CSS</td></tr>
   </table>
-  <span class="num">6</span>
+  <span class="num">7</span>
 </section>
 
 <section class="slide">
@@ -139,7 +154,7 @@ td a { color: #6c4cf0; text-decoration: none; font-weight: 600; }
     <div class="card t"><h3>Nuovi progetti</h3><p>Aggiungere una card per ogni nuovo lavoro del Master.</p></div>
     <div class="card co"><h3>Inglese</h3><p>Una versione del sito in inglese.</p></div>
   </div>
-  <span class="num">7</span>
+  <span class="num">8</span>
 </section>
 
 <section class="slide links">
@@ -150,7 +165,7 @@ td a { color: #6c4cf0; text-decoration: none; font-weight: 600; }
   <a href="https://masterx567.github.io/sito-personale/">masterx567.github.io/sito-personale</a>
   <p style="margin-top:30px">Codice su GitHub</p>
   <a href="https://github.com/masterx567/sito-personale">github.com/masterx567/sito-personale</a>
-  <span class="num">8</span>
+  <span class="num">9</span>
 </section>
 
 </body>
